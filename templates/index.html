@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width:device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  	body{background-color: #E60B59;}
+  	form{
+  		background-color: white;
+  		margin-left: 10px;
+  		padding: 10px;
+  		margin-top: 20%;
+  		margin-bottom: 10%;
+  		border-radius: 2%;
+  		box-shadow: 2px 2px;
+  	}
+  	h2{color:#E60B59; }
+  	button{background-color:#E60B59;
+  		color: white;
+  		font-size: 80px;
+  	}
+  </style>
+</head>
+<body>
+
+	<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">	
+			<form action="{{url_for('predict')}}" method="post">
+				<h2><center>Enter Your Attribute:</center></h2>
+				<hr>
+				<div class="form-group col-ls-6">
+					<input type="text" name="pregne" class="form-control" placeholder="Pregnency:">
+				</div>
+				<div class="form-group col-ls-6">
+					<input type="text" name="glucose" class="form-control" placeholder="Glucose:">
+				</div>
+				<div class="form-group col-ls-6">
+					<input type="text" name="BloodPressure" class="form-control" placeholder="BloodPressure:">
+				</div>
+				<div class="form-group col-ls-6">
+					<input type="text" name="SkinThickness" class="form-control" placeholder="SkinThickness:">
+				</div>
+				<div class="form-group col-ls-6">
+					<input type="text" name="Insulin" class="form-control" placeholder="Insulin:">
+				</div>
+				<div class="form-group col-ls-6">
+					<input type="text" name="BMI" class="form-control" placeholder="BMI:">
+				</div>
+				<div class="form-group col-ls-6">
+					<input type="text" name="DiabetesPedigreeFunction" class="form-control" placeholder="DiabetesPedigreeFunction:">
+				</div>
+				<div class="form-group col-ls-6">
+					<input type="text" name="Age" class="form-control" placeholder="Age:">
+				</div>
+				<h3>{{prediction_text}}</h3>
+				<div class="form-group col-ls-2">
+      			<button type="submit" name="submit" class="btn  btn-block mt-lg-4">Submit</button>
+   				</div>
+   			</div>			
+			</form>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+</body>
+</html>
